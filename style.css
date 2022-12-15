@@ -1,0 +1,97 @@
+body {
+    background-color: #F0F0F0;
+    font-family: 'Muli';
+}
+
+h1 {
+    text-align: center;
+    margin-top: 100px;
+}
+
+.faq-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    gap: 30px;
+
+}
+
+.faq {
+    border: solid 1px #9FA4A8;
+    border-radius: 15px;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-between; */
+    padding: 20px;
+
+}
+
+.active {
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.1);
+    background-color: #FFFFFF;
+}
+
+.faq-text {
+    display: none;
+}
+
+.faq.active .faq-text {
+    display: block;
+}
+
+.fa-times {
+    display: none;
+}
+
+
+.faq-toggle {
+    position: absolute;
+    left: 65%;
+    border: none;
+
+}
+
+.faq.active .faq-toggle {
+    position: absolute;
+    left: 92%;
+}
+
+.faq.active .fa-chevron-down {
+    display: none;
+}
+
+.faq.active .fa-times {
+    display: block;
+    border: 1px solid;
+    background-color: #9FA4A8;
+    color: white;
+    padding: 5px;
+    border-radius: 100%;
+}
+
+
+.faq.active::before,
+.faq.active::after {
+    content: "\f075";
+    font-family: "Font Awesome 5 Free";
+    color: #2ecc71;
+    font-size: 7rem;
+    height: 0px;
+    opacity: 0.2;
+    position: relative;
+    top: -100px;
+    left: -200px;
+    z-index: 0;
+}
+
+.faq.active::before {
+    color: #3498db;
+    top: -10px;
+    left: -20px;
+    transform: rotateY(180deg);
+    position: absolute;
+}
